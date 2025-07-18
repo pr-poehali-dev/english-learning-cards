@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
@@ -37,18 +38,24 @@ const Index = () => {
               </span>
             </div>
             <nav className="flex space-x-8">
-              <Button variant="ghost" className="text-gray-700 hover:text-blue-600">
-                <Icon name="Home" className="h-4 w-4 mr-2" />
-                Главная
-              </Button>
-              <Button variant="ghost" className="text-gray-700 hover:text-blue-600">
-                <Icon name="CreditCard" className="h-4 w-4 mr-2" />
-                Карточки
-              </Button>
-              <Button variant="ghost" className="text-gray-700 hover:text-blue-600">
-                <Icon name="Target" className="h-4 w-4 mr-2" />
-                Тренировки
-              </Button>
+              <Link to="/">
+                <Button variant="ghost" className="text-blue-600 bg-blue-50">
+                  <Icon name="Home" className="h-4 w-4 mr-2" />
+                  Главная
+                </Button>
+              </Link>
+              <Link to="/flashcards">
+                <Button variant="ghost" className="text-gray-700 hover:text-blue-600">
+                  <Icon name="CreditCard" className="h-4 w-4 mr-2" />
+                  Карточки
+                </Button>
+              </Link>
+              <Link to="/training">
+                <Button variant="ghost" className="text-gray-700 hover:text-blue-600">
+                  <Icon name="Target" className="h-4 w-4 mr-2" />
+                  Тренировки
+                </Button>
+              </Link>
               <Button variant="ghost" className="text-gray-700 hover:text-blue-600">
                 <Icon name="TrendingUp" className="h-4 w-4 mr-2" />
                 Прогресс
